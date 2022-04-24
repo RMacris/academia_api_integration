@@ -1,0 +1,15 @@
+.footerStyle {
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(
+    90deg,
+    grey,
+  );
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5em;
+}
