@@ -26,7 +26,46 @@ a.navbar-brand {
     padding: 15px auto !important;
 }
 
-.container {
+.nav-custom-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: inherit;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
     padding-top: 15px !important;
     padding-bottom: 15px !important;
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+}
+
+@media (min-width: 1400px) {
+    .nav-custom-container{ 
+        max-width: auto !important;
+    }
+    
+}
+@media (min-width: 1200px) {
+    .nav-custom-container{ 
+        max-width: auto !important;
+    }
+    
+}
+@media (min-width: 960px) {
+    .nav-custom-container{ 
+        max-width: auto !important;
+    }
+    
+}
+@media (min-width: 720px) {
+    .nav-custom-container{ 
+        max-width: auto !important;
+    }
+    
+}
+@media (min-width: 576px) {
+    .nav-custom-container{ 
+        max-width: auto !important;
+    }   
+    
 }

@@ -34,7 +34,7 @@ export default class NavbarMenu extends React.Component {
         return (
             <Navbar bg="light" expand="lg">
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Container>
+                    <div className='nav-custom-container'>
                         <Navbar.Brand href="#home">Resilia-Academy</Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
@@ -45,7 +45,7 @@ export default class NavbarMenu extends React.Component {
                                 <Nav.Link eventKey={4} href="/Login">LOGIN</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
-                    </Container>
+                    </div>
                 </Navbar>
             </Navbar>
         );

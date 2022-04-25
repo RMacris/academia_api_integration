@@ -9,7 +9,8 @@ export class AvaliacaoTemplate{
          taxaGordura:0.0,
          ombrosE: 0.0,
          ombrosD: 0.0,
-         tricipal: 0.0,
+         tricipalE: 0.0,
+         tricipalD: 0.0,
          peitoral: 0.0,
          cintura: 0.0,
          quadril: 0.0,
@@ -33,7 +34,8 @@ export class AvaliacaoTemplate{
         this.taxaGordura   = this.format(avalInfo.taxaGordura)
         this.ombrosE       = this.format(avalInfo.ombrosE)
         this.ombrosD       = this.format(avalInfo.ombrosD)
-        this.tricipal      = this.format(avalInfo.tricipal)
+        this.tricipalE     = this.format(avalInfo.tricipalE)
+        this.tricipalD     = this.format(avalInfo.tricipalD)
         this.peitoral      = this.format(avalInfo.peitoral)
         this.cintura       = this.format(avalInfo.cintura)
         this.quadril       = this.format(avalInfo.quadril)

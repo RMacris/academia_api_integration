@@ -1,13 +1,10 @@
 import './App.css';
-import { AvaliacaoForm } from './components/avaliacao-form';
+import AvaliacaoPage from './pages/avaliacaoPage';
 import NavbarMenu from './components/navbar-menu/navbar.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Test from './pages/test'
 import {
   BrowserRouter as Router,
-  Switch,
   Route,
-  Link,
   Routes
 } from "react-router-dom";
 
@@ -20,11 +17,9 @@ function App() {
       <main>
       <Router>
         <Routes>
-          <Route path="/" element={<AvaliacaoForm />} /> 
-          <Route path="/login" element={<Test />}/>
+          <Route path="/" element={<AvaliacaoPage />} /> 
         </Routes>
       </Router>
-        {/* <AvaliacaoForm ></AvaliacaoForm> */}
 
       </main>
       {/* Footer */}
