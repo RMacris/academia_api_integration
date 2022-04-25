@@ -3,7 +3,7 @@ import { AvaliacaoForm } from './components/avaliacao-form';
 import NavbarMenu from './components/navbar-menu/navbar.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import Test from './pages/test'
-import Login from "../src/components/pages/login.jsx"
+import Login from "../src/components/formularioLogin/login.jsx"
 import {
   BrowserRouter as Router,
   Switch,
