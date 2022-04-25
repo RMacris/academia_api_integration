@@ -1,5 +1,5 @@
+import {FaFacebook, FaInstagram, FaTwitter, FaYoutube} from 'react-icons/fa'
 import React from "react";
-import {FaFacebook, FaInstagram, FaTwitter, FaYoutube}from 'react-icons/fa'
 import {
   Box,
   Container,
@@ -7,10 +7,6 @@ import {
   Column,
   FooterLink,
   Heading,
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaTwitter,
   } from "./FooterStyles";
   
 const Footer = () => {
@@ -19,7 +15,6 @@ const Footer = () => {
       <h1 style={{ color: "gray", 
                    textAlign: "center", 
                    marginTop: "-50px" }}>
-        GeeksforGeeks: A Computer Science Portal for Geeks
       </h1>
       <Container>
         <Row>
@@ -55,28 +50,32 @@ const Footer = () => {
             <FooterLink href="#">
               <i className="fab fa-facebook">
                 <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
+                  <footer/>
+                  <FaFacebook /> Facebook
+              </span>
               </i>
             </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-instagram">
                 <span style={{ marginLeft: "10px" }}>
-                  Instagram
+                <footer/>
+                  <FaInstagram /> Instagram
                 </span>
               </i>
             </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-twitter">
                 <span style={{ marginLeft: "10px" }}>
-                  Twitter
+                <footer/>
+                  <FaTwitter /> Twitter
                 </span>
               </i>
             </FooterLink>
             <FooterLink href="#">
               <i className="fab fa-youtube">
                 <span style={{ marginLeft: "10px" }}>
-                  Youtube
+                <footer/>
+                  <FaYoutube /> Youtube
                 </span>
               </i>
             </FooterLink>

@@ -8,6 +8,9 @@ hr {
 	border-top: 1px solid #094CFA;
 }
 
+<!-- Load font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   padding: 80px 60px;
   background: black;
   position: absolute;
