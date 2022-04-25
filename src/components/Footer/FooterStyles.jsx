@@ -12,7 +12,7 @@ hr {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   padding: 80px 60px;
-  background: black;
+  background: grey;
   position: absolute;
   bottom: 0;
   width: 100%;
