@@ -33,12 +33,12 @@ export function Contatos() {
                             <h5 class="card-title">Igor Campos</h5>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <label>igor@gmail.com</label>
+                            <label>igorcampos20016@gmail.com</label>
                             <li class="list-group-item">
                                 <a class="card-link" href="http://github.com/igorcampos20016">Github Profile</a>
                             </li>
                             <li class="list-group-item">
-                                <a class="card-link" href="https://www.linkedin.com/in/wandberg-de-lima-1a5a52177/">LinkedIn Profile</a>
+                                <a class="card-link" href="https://www.linkedin.com/in/igor-campos-675b62198">LinkedIn Profile</a>
                             </li>
                         </ul>
                     </div>
