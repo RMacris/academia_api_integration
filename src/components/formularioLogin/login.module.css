@@ -1,52 +1,73 @@
 .principal{
-    background-color: aqua;
+    background-color: aquamarine;
     display: flex;
-    height: 540px;
+    height: 100vh;
     width: 100%;
 }
-
-.form{
-    background-color: rgb(33,37,41);
-    width: 25%;
-    height: 100%;
-    padding: 20px;
-}
-
-.home{
-    
-    height:70%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.corpo{
+.login{
     background-color: rgb(255, 255, 255);
+    width: 50%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 2px;
-    height: 100%;
+    flex-direction: column;
+}
+.form{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    padding:24px;
+}
+
+.label{
+    position: relative;  
+}
+.email::after{
+    top: 37px;
+    left: 15px;
+    position: absolute;
+    content: url("../../assets/email.png");
+}
+.senha::after{
+    top: 37px;
+    left: 15px;
+    position: absolute;
+    content: url("../../assets/senha.png");
+}
+.email{
+    display: inline-flex;
+    width: 100%;
+}
+.input{
+    width: 100%;
+    position: relative;
+
+    padding-left: 60px !important; 
+}
+.cadastro{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.tagA{
+    text-decoration: none;
 }
 .rodaPe{
-    
     display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-    width: 500px;
+    justify-content: center;
+    margin-top: 10px;    
 }
-
-
 .botao{
     width: 130px;
     border-radius: 2px;
     background-color:rgb(244, 244, 245)
 }
-
-.input{
-    width: 50%;
-    border-radius: 2px;
+.propaganda{
+    background-color: rgb(255, 255, 255, 255);
+    z-index: -10;
+    position: relative;
+    height: 100%;
+    width: 100%;
 }
 
 .imagem{
@@ -55,55 +76,12 @@
     width: 80%;
 }
 
-
-@media screen and (min-width: 1000px) {
-
-    .principal{
-        background-color: rgb(226, 4, 4);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 540px;
-        width: 100%;
-    }
-
-    .form{
-        background-color: rgb(33,37,41);
-        width: 50%;
-        height: 100%;
-        padding: 20px;
-    }
-
-    .home{
-    
-        display: flex;
-        justify-content: center;
-    }
-
-    .corpo{
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 2px;
-        height: 70%;
-      
-    }
-
-    .propaganda{
-        background-color: rgb(255, 255, 255, 255);
-        height: 100%;
-        width: 100%;
-    }
-
-    .imagem{
-        border-style: solid;
-        border-color: rgb(0, 0, 0);
-        width: 100%;
-        height: 100%;
-    }
-
+.botao:hover {
+    color: rgb(52, 150, 231);
 }
 
+.icones{
+    width: 35px;
+    height: 35px;
+}
 
