@@ -1,4 +1,4 @@
-
+import  Moment  from  'moment' ;
 export class AvaliacaoTemplate{ 
     constructor(
         avalInfo = {
@@ -73,20 +73,25 @@ export class AvaliacaoTemplate{
         if(val > Number.MAX_SAFE_INTEGER) { 
             // console.warn('The number ' + val + ' exceeds the max safe value')
             return 999.99
-        }  
+        }
         return this.clamp(parseFloat(val.toFixed(2)), 0.00, 999.99)
     }
-    formatID(val = 0){ 
-        if(typeof val != `number`) return null
-        if(val < 1) return null
-        if(val > Number.MAX_SAFE_INTEGER) { 
-            // console.warn('The number ' + val + ' exceeds the max safe value')
+    formatID(val = 0) {
+        if (typeof val != `number`) return null
+        if (val < 1) return null
+        if (val > Number.MAX_SAFE_INTEGER) {
             return null
-        } 
+        }
         return parseInt(val)
     }
+    setUpdatedTime() {
+        return Moment().format()
+    }
+    dateFormat(date) {
+        return Moment().format(date)
+    }
 
-    clamp(value, min, max) { 
+    clamp(value, min, max) {
         return Math.min(Math.max(value, min), max);
     }
 }
