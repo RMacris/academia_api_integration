@@ -1,1 +1,32 @@
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 475px !important; 
+
+}
+.container-inputs-horizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 24px;
+}
+.container-inputs-vertical  {
+
+}
+.move-right  {
+
+    margin: 0 0 0 auto !important;
+}
+
+.title-margin-left { 
+    margin-left: 10px;
+}
+
+.container-max-width {
+    width: 100%;
+}
+.space-between {
+    justify-content: space-between;
+}
