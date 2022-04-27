@@ -2,14 +2,9 @@ import './App.css';
 import { AvaliacaoForm } from './components/avaliacao-form';
 import NavbarMenu from './components/navbar-menu/navbar.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Test from './pages/test'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Routes
-} from "react-router-dom";
+import { Contatos } from './pages/contato';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from './pages/login';
 
 function App() {
   return (
@@ -18,12 +13,13 @@ function App() {
       <NavbarMenu />
 
       <main>
-      <Router>
-        <Routes>
-          <Route path="/" element={<AvaliacaoForm />} /> 
-          <Route path="/login" element={<Test />}/>
-        </Routes>
-      </Router>
+        <Router>
+          <Routes>
+            <Route path="/" element={<AvaliacaoForm />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/Contatos" element={<Contatos />} />
+          </Routes>
+        </Router>
         {/* <AvaliacaoForm ></AvaliacaoForm> */}
 
       </main>
