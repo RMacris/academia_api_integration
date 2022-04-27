@@ -7,6 +7,7 @@ import { ContainerRow } from '../components/styled-components/form/form-containe
 import { ContainerColumn } from '../components/styled-components/form/form-container'
 import { StatisticsComponent } from '../components/statistics/statistics-component.jsx'
 import { StatisticsChart } from '../components/statistics/StatisticsChart'
+import { FormOverlay } from '../components/form-overlay/form-overlay'
 import './avaliacaoPage.css'
 
 export default function AvaliacaoPage() {
@@ -49,10 +50,11 @@ export default function AvaliacaoPage() {
 
                     </ContainerRow>
                 </FormHeader>
-                    <AvaliacaoForm> </AvaliacaoForm>
-
+                <AvaliacaoForm>
+                    <FormOverlay></FormOverlay>
+                </AvaliacaoForm>
                 </div>
-                <StatisticsComponent id='Statistics' leftPos={statsFormStyle[0]} visibility={statsFormStyle[1]} > 
+                <StatisticsComponent id='Statistics'  formSize={'475px'} leftPos={statsFormStyle[0]} visibility={statsFormStyle[1]} > 
                     <StatisticsChart></StatisticsChart>
                 </StatisticsComponent>
             </div>

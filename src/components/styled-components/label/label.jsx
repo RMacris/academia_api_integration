@@ -7,11 +7,5 @@ export const Label = styled.label`
     padding: 8px 12px;
     border-style: none;
     text-transform: capitalize;
-    &:hover {
-        /* ${Input} {
-            background-color: rgb(230,230,230);
-
-        } */
-    }
 
 `

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerGrid = styled.div `
+export const ContainerGrid = styled.form `
     /* justify-content: space-evenly  ; */
     /* align-items: center; */
     margin: ${props => props.margin};
@@ -12,7 +12,6 @@ export const ContainerColumn = styled(ContainerGrid) `
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-
 `
 export const ContainerRow = styled(ContainerGrid) `
     display: flex;

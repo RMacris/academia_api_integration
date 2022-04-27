@@ -3,28 +3,28 @@ export class AvaliacaoTemplate{
     constructor(
         avalInfo = {
          id: null,
-         altura: 0.0, 
-         peso: 0.0, 
-         massaMuscular: 0.0, 
-         taxaGordura:0.0,
-         ombrosE: 0.0,
-         ombrosD: 0.0,
-         tricipalE: 0.0,
-         tricipalD: 0.0,
-         peitoral: 0.0,
-         cintura: 0.0,
-         quadril: 0.0,
-         bracoE: 0.0,
-         bracoD: 0.0,
-         pernaE: 0.0,
-         pernaD: 0.0,
-         panturrilhaE: 0.0,
-         panturrilhaD: 0.0,
-         abdomem: 0.0,
-         gluteo: 0.0,
-         user_id: 0,
-         createdAt: 0.0,
-         updatedAt: 0.0
+         altura: '', 
+         peso: '', 
+         massaMuscular: '', 
+         taxaGordura: '',
+         ombrosE: '',
+         ombrosD: '',
+         tricipalE: '',
+         tricipalD: '',
+         peitoral: '',
+         cintura: '',
+         quadril: '',
+         bracoE: '',
+         bracoD: '',
+         pernaE: '',
+         pernaD: '',
+         panturrilhaE: '',
+         panturrilhaD: '',
+         abdomem: '',
+         gluteo:  '',
+         user_id: '',
+         createdAt: '',
+         updatedAt: ''
     }
     ) {
         this.id            = this.formatID(avalInfo.id)
@@ -59,8 +59,9 @@ export class AvaliacaoTemplate{
     /*
     this function make sure to format the input into a valido sql decimal (2,3)
     */
-    format(val = 0.0) {
-        
+    format(val) {
+
+        if(val === '') return ''
         if(typeof val === 'string') {
             val = parseFloat(val)
             console.log(val)
@@ -68,7 +69,7 @@ export class AvaliacaoTemplate{
         
         if(isNaN(val)) return 0.00
         if(typeof val != `number`) return 0.00
-        if(val < 0 || val == null) return 0.00
+        if(val < 0 || val == null) return ''
         if(val > Number.MAX_SAFE_INTEGER) { 
             // console.warn('The number ' + val + ' exceeds the max safe value')
             return 999.99
