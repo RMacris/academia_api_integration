@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
-
-
-
 export const StatisticsComponent = styled.div`
     position: relative; 
     background-color: rgb(240,240,240);
