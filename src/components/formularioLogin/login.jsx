@@ -6,7 +6,6 @@ import {Label} from "../styled-components/label/label.jsx"
 import styles from "./login.module.css";
 import {cadastro} from "../../scripts/services/api.js"
 
-
 function Login() {
 	
 	const [value, setValue] = useState({});
@@ -16,15 +15,13 @@ function Login() {
 
 	function login(e){
 		e.preventDefault();
+
 		cadastro.post("/usuario/login", value).then((response)=>{
 			setValue(response.data)
 		}).catch((e)=>{
 					console.log(e);
 		})	
 	}
-
-		console.log(value);
-
 
     return(
 		<div className={styles.principal}>
