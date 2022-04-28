@@ -8,6 +8,7 @@ import { ContainerColumn } from '../components/styled-components/form/form-conta
 import { StatisticsComponent } from '../components/statistics/statistics-component.jsx'
 import { StatisticsChart } from '../components/statistics/StatisticsChart'
 import { FormOverlay } from '../components/form-overlay/form-overlay'
+
 import './avaliacaoPage.css'
 
 export default function AvaliacaoPage() {

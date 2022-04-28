@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const api = axios.create({
-  baseURL: "http://localhost:8080",
+const api = axios.create({
+  baseURL: "https://acadamy-resilia.herokuapp.com",
 });
 
 export const cadastro = axios.create({
