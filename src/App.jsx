@@ -8,7 +8,7 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-
+import Cadastro from './components/formularioCadastro/cadastro';
 import { LoginContext } from './Contexts/LoginContext';
 import { UserTemplate } from './scripts/UserTemplate';
 
@@ -25,6 +25,7 @@ function App() {
           <Routes>
               <Route path="/avaliacaoPage" element={<AvaliacaoPage />} />
               <Route path="/" element={<Login />} /> 
+              <Route path="/cadastro" element={<Cadastro />} />
 
 
           </Routes>

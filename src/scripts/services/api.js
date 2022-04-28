@@ -5,7 +5,7 @@ export const api = axios.create({
 });
 
 export const cadastro = axios.create({
-    baseURL: "https://api-loja-t11.herokuapp.com"
+    baseURL: "https://acadamy-resilia.herokuapp.com"
 })
 
 //! used for authentication 

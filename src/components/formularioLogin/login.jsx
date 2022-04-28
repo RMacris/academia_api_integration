@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {Button} from "../styled-components/button/button.jsx";
 import {Input} from "../styled-components/input/input.jsx";
 import {Label} from "../styled-components/label/label.jsx"
@@ -16,7 +17,7 @@ function Login() {
 	function login(e){
 		e.preventDefault();
 
-		cadastro.post("/usuario/login", value).then((response)=>{
+		cadastro.post("/signup", value).then((response)=>{
 			setValue(response.data)
 		}).catch((e)=>{
 					console.log(e);
@@ -60,8 +61,8 @@ function Login() {
 								required
 								/>							
 						<div className={styles.cadastro}>
-						<a className={styles.tagA} href="#">Novo cadastro...</a>
-						<a className={styles.tagA} href="#">Recuperar Cadastro...</a>
+						<Link className={styles.tagA} to="/cadastro">Novo Cadastro...</Link>
+						<Link className={styles.tagA} to="">Recuperar Senha...</Link>
 						</div>
 							
 						</Label>
