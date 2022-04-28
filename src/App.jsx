@@ -2,6 +2,7 @@ import './App.css';
 import AvaliacaoPage from './pages/avaliacaoPage';
 import NavbarMenu from './components/navbar-menu/navbar.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from "../src/components/formularioLogin/login.jsx"
 import {
   BrowserRouter as Router,
   Route,
@@ -22,8 +23,8 @@ function App() {
             <LoginContext.Provider value={{}}>
         <Router>
           <Routes>
-              <Route path="/" element={<AvaliacaoPage />} />
-              {/* <Route path="/avaliacao" element={<Login />} />  */}
+              <Route path="/avaliacaoPage" element={<AvaliacaoPage />} />
+              <Route path="/" element={<Login />} /> 
 
 
           </Routes>

@@ -3,21 +3,28 @@ import { useState } from "react";
 import {Button} from "../styled-components/button/button.jsx";
 import {Input} from "../styled-components/input/input.jsx";
 import {Label} from "../styled-components/label/label.jsx"
-
 import styles from "./login.module.css";
+import {cadastro} from "../../scripts/services/api.js"
+
 
 function Login() {
 	
-	function login(e){
-		e.preventDefault();
-	}
-
-	const [value, setValue] = useState("");
+	const [value, setValue] = useState({});
 	function handleOnChange(e) {
 		setValue({ ...value, [e.target.name]: e.target.value });
 	  }
 
-	  console.log(value);
+	function login(e){
+		e.preventDefault();
+		cadastro.post("/usuario/login", value).then((response)=>{
+			setValue(response.data)
+		}).catch((e)=>{
+					console.log(e);
+		})	
+	}
+
+		console.log(value);
+
 
     return(
 		<div className={styles.principal}>
@@ -38,6 +45,8 @@ function Login() {
 							placeholder = "E-mail"
 							className={styles.input}
 							onChange={handleOnChange}
+							name = "email"
+							value={value.email}
 							required
 							/>														
 						</Label>
@@ -49,11 +58,13 @@ function Login() {
 								placeholder = "Password"
 								className={styles.input}
 								onChange={handleOnChange}
+								name = "senha"
+								value={value.senha}
 								required
 								/>							
 						<div className={styles.cadastro}>
-						<a className={styles.tagA} href="https://www.w3schools.com">Novo cadastro...</a>
-						<a className={styles.tagA} href="https://www.w3schools.com">Recuperar Cadastro...</a>
+						<a className={styles.tagA} href="#">Novo cadastro...</a>
+						<a className={styles.tagA} href="#">Recuperar Cadastro...</a>
 						</div>
 							
 						</Label>
@@ -63,8 +74,6 @@ function Login() {
 						</div>			
 					</form>
 				</div>
-
-
 		</div>
     );
 }

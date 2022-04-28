@@ -22,13 +22,13 @@
     position: relative;  
 }
 .email::after{
-    top: 37px;
+    top: 48px;
     left: 15px;
     position: absolute;
     content: url("../../assets/email.png");
 }
 .senha::after{
-    top: 37px;
+    top: 48px;
     left: 15px;
     position: absolute;
     content: url("../../assets/senha.png");
@@ -40,7 +40,6 @@
 .input{
     width: 100%;
     position: relative;
-
     padding-left: 60px !important; 
 }
 .cadastro{
