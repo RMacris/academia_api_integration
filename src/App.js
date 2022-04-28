@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from './components/Footer/Footer/';
+import Footer from './components/Footer/Footer.jsx';
 import './App.css';
 import { AvaliacaoForm } from './components/avaliacao-form';
 import NavbarMenu from './components/navbar-menu/navbar.jsx';

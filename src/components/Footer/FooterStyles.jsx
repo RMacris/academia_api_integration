@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 
-   
 export const Box = styled.div`
 hr {
 	border: 0;
@@ -13,7 +12,7 @@ hr {
 
   padding: 80px 60px;
   background: grey;
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   
