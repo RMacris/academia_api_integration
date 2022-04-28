@@ -20,7 +20,6 @@ export function LoginProvider({children})  {
 
     useEffect(() => { 
         const storage = GetAuthorizationLocalStorage()
-        console.log(storage)
         if(storage == null) {
             setAuthState(false)
             setUserData(new UserTemplate())
@@ -30,11 +29,11 @@ export function LoginProvider({children})  {
             setUserData(storage)
         }
 
-    })
+    },[])
     
     return (
         <LoginContext.Provider value={userData}>
-            <AuthLoginContext.Provider value={authState}>
+            <AuthLoginContext.Provider value={{auth: authState, setAuth: setAuthState}}>
                 { children }
             </AuthLoginContext.Provider>
         </LoginContext.Provider>

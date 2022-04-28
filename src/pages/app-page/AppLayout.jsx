@@ -10,6 +10,7 @@ import { useAuthentication } from '../../Contexts/LoginContext';
 
 export function AppLayout() {
   const auth = useAuthentication()
+  console.log(auth)
   return (
     <>
     <NavbarMenu ></NavbarMenu>

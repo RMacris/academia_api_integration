@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerGrid = styled.form `
+export const ContainerGrid = styled.div`
     /* justify-content: space-evenly  ; */
     /* align-items: center; */
     margin: ${props => props.margin};
