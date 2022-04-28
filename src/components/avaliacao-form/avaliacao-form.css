@@ -2,7 +2,7 @@
 .form-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 475px !important; 
 
 }
 .container-inputs-horizontal{
@@ -22,4 +22,11 @@
 
 .title-margin-left { 
     margin-left: 10px;
+}
+
+.container-max-width {
+    width: 100%;
+}
+.space-between {
+    justify-content: space-between;
 }
