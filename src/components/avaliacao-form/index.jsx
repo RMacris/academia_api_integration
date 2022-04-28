@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { AvaliacaoTemplate } from '../../scripts/AvaliacaoTemplate.js'
+import { AvaliacaoTemplate } from '../../scripts/ClassTemplate/AvaliacaoTemplate'
 import { PostAvaliacao } from '../../scripts/services/avaliacaoCRUD'
 import './avaliacao-form.css'
 
@@ -11,14 +11,16 @@ import { FormWraper } from '../styled-components/form/form-wraper.jsx'
 import { ContainerColumn, ContainerRow } from '../styled-components/form/form-container.jsx'
 
 
-export const personAttr = ['altura','peso']
+// export const personAttr = ['altura','peso']
+
+import { useAuthentication } from '../../Contexts/LoginContext'
 
 export const AvaliacaoForm = (props) => { 
     const [state, setState] = useState(new AvaliacaoTemplate())
-    
+    const auth = useAuthentication()
     useEffect(() => {
 
-        console.warn('looping')
+        // console.log(auth)
         
         return () => {
             // second
