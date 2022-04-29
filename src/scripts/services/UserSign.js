@@ -5,9 +5,7 @@ export async function SignIn(user = new UserTemplate()) {
     try {
         
         const data = new UserTemplate(user)
-       
         const result = await api.post('/signin', data)
-    
         return result
 
     } catch (error) {
@@ -15,6 +13,7 @@ export async function SignIn(user = new UserTemplate()) {
         return error
     }
 }
+
 export async function SignUp(user = new UserTemplate()) {
     try {
 

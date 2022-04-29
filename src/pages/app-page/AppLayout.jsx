@@ -6,20 +6,18 @@ import {
   Route,
   Routes
 } from "react-router-dom";
-import { useAuthentication } from '../../Contexts/LoginContext';
-import Login from "../../components/formularioLogin/login.jsx"
-import Cadastro from "../../components/formularioCadastro/cadastro.jsx"
+import { useAuthentication, useLoginData } from '../../Contexts/LoginContext';
+
 export function AppLayout() {
   const auth = useAuthentication()
-  console.log(auth)
+  const data = useLoginData() 
   return (
     <>
     <NavbarMenu ></NavbarMenu>
     <Router>
         <Routes>
-        <Route path="/cadastro" element={<Cadastro/>}/>
-            <Route path="/" element={<Login/>}/>
-            { auth.auth && <Route path="/avalicao" element={<AvaliacaoPage />} />}
+            { auth.auth && <Route path="/" element={<AvaliacaoPage />} />}
+            {/* { !(auth.auth) && <Route path="/" element={<Login />} />} */}
         </Routes>
     </Router>
     </>
