@@ -5,31 +5,46 @@ import {Button} from "../styled-components/button/button.jsx";
 import {Input} from "../styled-components/input/input.jsx";
 import {Label} from "../styled-components/label/label.jsx"
 import styles from "./login.module.css";
-import {cadastro} from "../../scripts/services/api.js"
+import {SignIn} from "../../scripts/services/UserSign.js"
+import { useAuthentication } from '../../Contexts/LoginContext'
+
+
+
+
+
 
 function Login() {
+
+
+	const navigate = useNavigate();
+	const auth = useAuthentication()
+
 	
 	const [value, setValue] = useState({});
 	function handleOnChange(e) {
 		setValue({ ...value, [e.target.name]: e.target.value });
 	  }
 
-	function login(e){
+	async function login(e){
 		e.preventDefault();
+	
 
-		cadastro.post("/signup", value).then((response)=>{
-			setValue(response.data)
-		}).catch((e)=>{
-					console.log(e);
-		})	
+		let resultado = await SignIn(value)
+
+		if(resultado.data.data.length === 1){
+
+			navigate("/avalicao")
+		}
+
+		console.log(resultado.data.data.length);
+
 	}
-
     return(
 		<div className={styles.principal}>
 
-			<div className={styles.propaganda}>
-					 {/* <img className={styles.imagem} src="https://i.pinimg.com/originals/ae/bb/95/aebb950866dfc6c867f80a80cc27f370.jpg" alt="Casal Saúdavel"/>	 */}
-			</div> 
+				<div className={styles.propaganda}>
+					<h2>Hello World!</h2>
+				</div>
 
 				<div className={styles.login}>
 
@@ -52,7 +67,7 @@ function Login() {
 						<Label className={[styles.label, styles.senha ].join(' ')}>
 								Digite sua senha: 
 							
-								<Input type="password"
+								<Input type="text"
 								placeholder = "Password"
 								className={styles.input}
 								onChange={handleOnChange}
@@ -61,7 +76,7 @@ function Login() {
 								required
 								/>							
 						<div className={styles.cadastro}>
-						<Link className={styles.tagA} to="/cadastro">Novo Cadastro...</Link>
+						<Link className={styles.tagA} to="/Cadastro">Novo Cadastro...</Link>
 						<Link className={styles.tagA} to="">Recuperar Senha...</Link>
 						</div>
 							
