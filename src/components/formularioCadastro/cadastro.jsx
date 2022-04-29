@@ -6,7 +6,7 @@ import {SignUp} from "../../scripts/services/UserSign"
 import { useState } from "react";
 
 
-function Cadastro(){
+export function Cadastro(){
 
     const [value, setValue] = useState({});
 	function handleOnChange(e) {
@@ -55,7 +55,7 @@ function Cadastro(){
                     />
                 </Label>
                 <div >
-                    <Button type="submit" >Cadastrar</Button>												
+                    <Button type="submit">Cadastrar</Button>												
                 </div>
             </form>
         </div>
@@ -63,4 +63,3 @@ function Cadastro(){
     )
 
 }
-export default Cadastro;

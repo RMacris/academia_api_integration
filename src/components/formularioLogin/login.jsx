@@ -6,38 +6,29 @@ import {Input} from "../styled-components/input/input.jsx";
 import {Label} from "../styled-components/label/label.jsx"
 import styles from "./login.module.css";
 import {SignIn} from "../../scripts/services/UserSign.js"
-import { useAuthentication } from '../../Contexts/LoginContext'
+import { useAuthentication, useLoginData } from '../../Contexts/LoginContext'
+import { SetAuthorizationLocalStorage } from "../../scripts/utils/authenticationHelper.js";
 
 
 
 
-
-
-function Login() {
-
-
+export function Login() {
 	const navigate = useNavigate();
 	const auth = useAuthentication()
-
-	
+	const user = useLoginData()
 	const [value, setValue] = useState({});
+	
 	function handleOnChange(e) {
 		setValue({ ...value, [e.target.name]: e.target.value });
 	  }
 
-	async function login(e){
-		e.preventDefault();
-	
-
+	async function authenticate(event){
+		event.preventDefault();
 		let resultado = await SignIn(value)
-
 		if(resultado.data.data.length === 1){
-
-			navigate("/avalicao")
+			auth.setAuth(true,resultado.data.data[0])
+			navigate("/")
 		}
-
-		console.log(resultado.data.data.length);
-
 	}
     return(
 		<div className={styles.principal}>
@@ -50,7 +41,7 @@ function Login() {
 
 					<h1>Fazer Login!</h1>
 
-					<form className={styles.form} onSubmit={(e) => login(e)}>
+					<form className={styles.form} onSubmit={(event) => authenticate(event)}>
 							
 						<Label className={[styles.label, styles.email ].join(' ')}>
 							Digite seu E-mail:																				
@@ -76,14 +67,14 @@ function Login() {
 								required
 								/>							
 						<div className={styles.cadastro}>
-						<Link className={styles.tagA} to="/Cadastro">Novo Cadastro...</Link>
+						<Link className={styles.tagA} to="/signup">Novo Cadastro...</Link>
 						<Link className={styles.tagA} to="">Recuperar Senha...</Link>
 						</div>
 							
 						</Label>
 						
 						<div className={styles.rodaPe}>
-							<Button type="submit" className={styles.botao}>Entrar</Button>												
+							<Button className={styles.botao}>Entrar</Button>												
 						</div>			
 					</form>
 				</div>
@@ -91,4 +82,3 @@ function Login() {
     );
 }
 
-export default Login;

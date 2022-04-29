@@ -10,6 +10,24 @@ export async function GetAvaliacaoByID(id = 0) {
     }
     
 }
+export async function GetAllUserAvaliacao(userID = 0) {
+    try { 
+        return api.get(`/avaliacao/user/${userID}`) 
+    }
+    catch (error) { 
+        console.error(error)
+    }
+    
+}
+export async function GetLastUserAvaliacao(userID = 0) {
+    try { 
+        return api.get(`/avaliacao/last/${userID}`) 
+    }
+    catch (error) { 
+        console.error(error)
+    }
+    
+}
 
 export async function PostAvaliacao(aval = new AvaliacaoTemplate()) {    
     try { 

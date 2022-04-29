@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { AvaliacaoTemplate } from '../../scripts/ClassTemplate/AvaliacaoTemplate'
-import { PostAvaliacao } from '../../scripts/services/avaliacaoCRUD'
+import { PostAvaliacao, GetLastUserAvaliacao, UpdateAvaliacaoByID } from '../../scripts/services/avaliacaoCRUD'
 import './avaliacao-form.css'
 
 
@@ -10,69 +10,64 @@ import { Button } from '../styled-components/button/button'
 import { FormWraper } from '../styled-components/form/form-wraper.jsx'
 import { ContainerColumn, ContainerRow } from '../styled-components/form/form-container.jsx'
 
+import { useLoginData, useCurrentAval } from '../../Contexts/LoginContext'
 
-// export const personAttr = ['altura','peso']
-
-import { useAuthentication } from '../../Contexts/LoginContext'
-
-export const AvaliacaoForm = (props) => { 
+export const AvaliacaoForm = ({ children }) => { 
     const [state, setState] = useState(new AvaliacaoTemplate())
-    const auth = useAuthentication()
-    useEffect(() => {
+    const userData = useLoginData()
+    const currentAval = useCurrentAval()
+    
+    useEffect(() => { 
+        // LoadLastUserAvalOnStart()
+        console.warn(currentAval)
+        setState(currentAval.aval)
+    },[currentAval.aval])
 
-        // console.log(auth)
-        
-        return () => {
-            // second
-        }
-    }, [])
 
+    function SetNewAval(){
+         setState()
+    }
+    // async function LoadLastUserAvalOnStart() {
+    //     const userId = userData.user.id
+    //     const result = await GetLastUserAvaliacao(userId)
+    //     if(result.data.data.length === 0) {
+    //         currentAval.setCurrentAval(new AvaliacaoTemplate())
+    //         return 
+    //     }
+    //     currentAval.setCurrentAval(result.data.data[0])
+    // }
     function HandleChange(e) {
         const newState = new AvaliacaoTemplate({...state})
         newState.setValue(e.target.name, (e.target.value))
         console.log(newState)
         setState({ ...newState })
     }
-
-    function ObjectIDs() { 
-        const {id, createdAt, updatedAt, user_id, ...rest} = new AvaliacaoTemplate()
-        return Object.keys(rest)
+    async function HandleUpdate(e) {
+        const data = {...state}
+        const final = new AvaliacaoTemplate(data)
+        final['user_id'] = userData.user.id
+        const result = await UpdateAvaliacao(data.id,final)
+        setState(result.data.data[0])
     }
-    function ObjectValues(value = new AvaliacaoTemplate()) { 
-        const {id, createdAt, updatedAt, user_id ,...rest} = new AvaliacaoTemplate(value)
-        return Object.values(rest)
+        
+    function UpdateAvaliacao(id, data) {
+        return UpdateAvaliacaoByID(id,data)
     }
-    
-    /** This function does not modify the original array */
-    function removeData(keys = [''], data) { 
-        let newData = {...data}
-        keys.forEach(el => delete newData[el]);
-        return newData  
-    }
-    
-    function CreateInputs(key, inputId, label, inputValue = {}) { 
-        return (
-            <Label htmlfor={"inputId"}>
-                {'test'}
-                <Input onChange={HandleChange} type="number" name={"inputId"} id={"inputId"} value={state["inputId"]} placeholder={'test'}/>
-            </Label>
-        )
-    }
-    
     function SubmitAvaliacao(data) { 
         return PostAvaliacao(data)
     }
-    async function HandleClick () {
+    async function HandleSave () {
         const data = {...state}
-        const result = await SubmitAvaliacao(data)
-        console.log(result)
+        const final = new AvaliacaoTemplate(data)
+        final['user_id'] = userData.user.id
+        const result = await SubmitAvaliacao(final)
         setState(result.data.data[0])
     }
-
+    
     
     return (
         <>
-            <FormWraper>
+            <FormWraper id="AvalForm">
                 <ContainerColumn className='container-max-width' columnStart={1}  columnEnd={3} rowStart={2} rowEnd={3}>
                     <ContainerColumn margin={'24px 0 0 0'}>
                         <h4 className='title-margin-left'>Titulo</h4>
@@ -129,11 +124,7 @@ export const AvaliacaoForm = (props) => {
                         </ContainerRow>
                     </ContainerColumn>
                     
-        
-                    {/* {
-                        ObjectIDs().map((value, index) => CreateInputs(index, value, fieldNameList[index],  state[value] ))
-                    } */}
-                    
+                   
                     <ContainerRow className='container-max-width space-between' margin={'24px 0 0 0'}>
                         <ContainerColumn>
                             <div>
@@ -189,9 +180,13 @@ export const AvaliacaoForm = (props) => {
                         </ContainerColumn>
                     </ContainerRow>
                 </ContainerColumn>
-                    
-                <Button onClick={HandleClick}>Criar Resgistro</Button>
-                <Button onClick={HandleClick}>Atualizar</Button>
+                
+                <div class="btn-wraper">
+                    <Button className='save-aval' onClick={HandleSave}>Salvar</Button>
+                    <Button className='update-aval' onClick={HandleUpdate}>Atualizar</Button>
+                </div>
+                { children }
+
             </FormWraper>
         </>
     )

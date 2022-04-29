@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    padding: 10px 24px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 1px 0 2px 0 #aaa;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.container:hover {
+    background-color: #eee;
+
+}
+
+.selected:active  { 
+    background-color: rgb(201, 224, 253);
+
+}
+.info{
+
+}
+.createdAt {
+
+}
+.updatedAt { 
+
+}
+
+.icon { 
+    height: 100%;
+    margin-left: auto;
+}
+.icon:hover{ 
+    color: rgb(255, 65, 65);
+}

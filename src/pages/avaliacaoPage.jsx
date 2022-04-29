@@ -8,27 +8,46 @@ import { ContainerColumn } from '../components/styled-components/form/form-conta
 import { StatisticsComponent } from '../components/statistics/statistics-component.jsx'
 import { StatisticsChart } from '../components/statistics/StatisticsChart'
 import { FormOverlay } from '../components/form-overlay/form-overlay'
+import { OverlayList } from '../components/overlay-list/OverlayList'
 
 import './avaliacaoPage.css'
 
 export default function AvaliacaoPage() {
     
-    const [isViewingStats, setViewingStats] = useState(false)
-    const [statsFormStyle, setStatsFormStyle] = useState("0")
+    const [isViewingStats, setViewingStats] = useState(true)
+    const [statsFormStyle, setStatsFormStyle] = useState(["-9000px",'hidden'])
+    const [formAvalStyle, setFormAvalStyle] = useState("-900px")
     useEffect(() => { 
-    
+        // SetInitialState() 
         return () => { }
     },[])
+    function SetInitialState () {
+        HideExtra()
+    }    
     function HandleViewingStats (e) {
-        const statistics = document.getElementById('Statistics')
-        console.log(statistics.offsetWidth)
-        if(e.target.value === '1'){
-            setStatsFormStyle([`${-statistics.offsetWidth}px`, 'hidden'])
+        setViewingStats(!isViewingStats)
+        if(isViewingStats) {
+            ShowExtra()
         }
         else{
-            //width of the container
-            setStatsFormStyle([0, 'visible'])
+            HideExtra()
         }
+        
+    }
+    function ShowExtra()  {
+        setStatsFormStyle([0, 'visible'])
+        setFormAvalStyle(0)
+    }
+    function HideExtra() {
+        const statistics = document.getElementById('Statistics')
+        const avalFormWidth =  GetAvaliacaoFormWidth()
+        setStatsFormStyle([`${-statistics.offsetWidth}px`, 'hidden'])
+        setFormAvalStyle(`${-avalFormWidth}px`)
+    }
+    function GetAvaliacaoFormWidth() { 
+        const avalForm = document.getElementById('AvalForm')
+        console.log(avalForm.offsetWidth)
+        return avalForm.offsetWidth
     }
     return (
         <div>
@@ -51,15 +70,16 @@ export default function AvaliacaoPage() {
 
                     </ContainerRow>
                 </FormHeader>
-                <AvaliacaoForm>
-                    <FormOverlay></FormOverlay>
+                <AvaliacaoForm >
+                    <FormOverlay leftPos={formAvalStyle}>
+                        <OverlayList ></OverlayList>
+                    </FormOverlay>
                 </AvaliacaoForm>
                 </div>
                 <StatisticsComponent id='Statistics'  formSize={'475px'} leftPos={statsFormStyle[0]} visibility={statsFormStyle[1]} > 
                     <StatisticsChart></StatisticsChart>
                 </StatisticsComponent>
             </div>
-
         </div>
     )
 }

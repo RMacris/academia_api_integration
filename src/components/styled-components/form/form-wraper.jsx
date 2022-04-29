@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const FormWraper = styled.form`
+export const FormWraper = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 10px;

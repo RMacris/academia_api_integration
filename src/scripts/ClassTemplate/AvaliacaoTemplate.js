@@ -1,4 +1,3 @@
-import  Moment  from  'moment' ;
 export class AvaliacaoTemplate{ 
     constructor(
         avalInfo = {
@@ -84,13 +83,6 @@ export class AvaliacaoTemplate{
         }
         return parseInt(val)
     }
-    setUpdatedTime() {
-        return Moment().format()
-    }
-    dateFormat(date) {
-        return Moment().format(date)
-    }
-
     clamp(value, min, max) {
         return Math.min(Math.max(value, min), max);
     }
