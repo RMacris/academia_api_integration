@@ -181,7 +181,7 @@ export const AvaliacaoForm = ({ children }) => {
                     </ContainerRow>
                 </ContainerColumn>
                 
-                <div class="btn-wraper">
+                <div className="btn-wraper">
                     <Button className='save-aval' onClick={HandleSave}>Salvar</Button>
                     <Button className='update-aval' onClick={HandleUpdate}>Atualizar</Button>
                 </div>

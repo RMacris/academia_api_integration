@@ -51,97 +51,79 @@ export function StatisticsChart() {
   const user = useLoginData()
   const currSelectedAval =  useCurrentAval()
   const [allAval, setAllAval] = useState() 
+  const [data, setData] = useState()
   
-    
+  
+  const chartRef = React.createRef();
   async function GetAllAval() {
     const result = await GetAllUserAvaliacao(user.user.id) 
+    console.warn(result.data.data)
     if(result.data.data.length == 0) {
-       setAllAval([new AvaliacaoTemplate()])
-       return
+      return [new AvaliacaoTemplate()]
     }
-    setAllAval(result.data.data)
+    return result.data.data
   }
   
-
+  function randomRgb() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+  }
   function GenerateDataObject(avals = [new AvaliacaoTemplate()]) { 
     let label = []
     let datasets = []
+    const keysToRead = [
+      "altura",       
+      "peso",
+      "massaMuscular",
+      "taxaGordura",
+      "ombrosE",
+      "ombrosD",
+      "tricipalE",
+      "tricipalD",
+      "peitoral",
+      "cintura",
+      "quadril",
+      "bracoE",
+      "bracoD",
+      "pernaE",
+      "pernaD",
+      "panturrilhaE",
+      "panturrilhaD",
+      "abdomem",
+      "gluteo"
+    ]
     
-    for(let i = 0 ; i < avals.length; i ++ ){
-      label.push(moment(avals[0].createdAt).format('L'))
-      let info = new DatasetInfo()
-      for(let k = 0 ; k < avals.length; k ++ ){
+    for(let k = 0; k < keysToRead.length; k++) {
+      let dataValues = []
+      for(let i = 0 ; i < avals.length; i ++ ){
+        dataValues.push(avals[i][keysToRead[k]])
       }
+      const color = randomRgb()
+      let info = new DatasetInfo(keysToRead[k], dataValues, color,color )
+      datasets.push({...info})
     }
+    for(let i = 0 ; i < avals.length ; i++ ) {
+      label.push(moment(avals[i].createdAt).format('L'))
+    }
+    const result = { labels: label, datasets: datasets }
+    return result
   }
-  const [data, setData] = useState({
-        labels: [
-          // "id",
-          "altura",       
-          "peso",
-          "massaMuscular",
-          "taxaGordura",
-          "ombrosE",
-          "ombrosD",
-          "tricipalE",
-          "tricipalD",
-          "peitoral",
-          "cintura",
-          "quadril",
-          "bracoE",
-          "bracoD",
-          "pernaE",
-          "pernaD",
-          "panturrilhaE",
-          "panturrilhaD",
-          "abdomem",
-          "gluteo"
-          // "user_id",
-          // "createdAt",
-          // "updatedAt"
-        ],
-        datasets: [
-          {
-            label: 'Dataset 1',
-            data: [1,2,3,4 ],
-            borderColor: 'rgb(255, 99, 132)',
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          },
-          {
-            label: 'Dataset 2',
-            data: [1,2,3,4 ],
-            borderColor: 'rgb(53, 162, 235)',
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
-          },
-        ],
-      })
-    useEffect(() => { 
-      // const labels = ['January', 'February', 'March', 'April'];
-
-      // const data = {
-      //   labels,
-      //   datasets: [
-      //     {
-      //       label: 'Dataset 1',
-      //       data: [1,2,3,4 ],
-      //       borderColor: 'rgb(255, 99, 132)',
-      //       backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      //     },
-      //     {
-      //       label: 'Dataset 2',
-      //       data: [1,2,3,4 ],
-      //       borderColor: 'rgb(53, 162, 235)',
-      //       backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      //     },
-      //   ],
-      // };
-    return () => { 
-    
-
-    }
+  useEffect(() => {
+    async function fetchData() {
+      const object = await GetAllAval()
+      setData(object)
+    } 
+    fetchData()
+      return  () => { 
+        
+      }
     },[]);
+
     
   return (
-        <Line options={options} data={data} />
+    <Line 
+    ref={chartRef} 
+    options={options}
+    data={GenerateDataObject(data)} />
   )
 }
