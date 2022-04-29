@@ -1,5 +1,6 @@
 import React from 'react'
 import AvaliacaoPage from '../../pages/avaliacaoPage';
+import Footer from './components/Footer/Footer.jsx';
 import {NavbarMenu} from  '../../components/navbar-menu/navbar.jsx';
 import {
   BrowserRouter as Router,
@@ -25,6 +26,7 @@ export function AppLayout() {
             { !(auth.auth) && <Route path="/signup" element={<Cadastro />} />}
         </Routes>
     </Router>
+    <Footer ></Footer>
     </>
   )
 }
