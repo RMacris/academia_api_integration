@@ -34,7 +34,7 @@ export function Login() {
 		<div className={styles.principal}>
 
 				<div className={styles.propaganda}>
-					<h2>Hello World!</h2>
+					<h2 className={styles.text}>Foco, "Força" e Fé</h2>
 				</div>
 
 				<div className={styles.login}>
@@ -67,8 +67,8 @@ export function Login() {
 								required
 								/>							
 						<div className={styles.cadastro}>
-						<Link className={styles.tagA} to="/signup">Novo Cadastro...</Link>
-						<Link className={styles.tagA} to="">Recuperar Senha...</Link>
+						<Link className={styles.tagA} to="/signup">Cadastro...</Link>
+						<Link className={styles.tagA} to="">Recuperar Conta...</Link>
 						</div>
 							
 						</Label>
