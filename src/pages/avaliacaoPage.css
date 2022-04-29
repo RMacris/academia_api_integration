@@ -15,3 +15,23 @@
     background-color: white;
     min-width: 280px;
 }
+
+.align {
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="radio"]:checked  + .label-highlight{ 
+    background-color: aquamarine;
+}
+
+input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+  }

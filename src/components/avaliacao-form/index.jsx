@@ -48,6 +48,8 @@ export const AvaliacaoForm = ({ children }) => {
         final['user_id'] = userData.user.id
         const result = await UpdateAvaliacao(data.id,final)
         setState(result.data.data[0])
+        alert("Atualizado Com Sucesso")
+
     }
         
     function UpdateAvaliacao(id, data) {
@@ -62,6 +64,7 @@ export const AvaliacaoForm = ({ children }) => {
         final['user_id'] = userData.user.id
         const result = await SubmitAvaliacao(final)
         setState(result.data.data[0])
+        alert("Salvo Com Sucesso")
     }
     
     

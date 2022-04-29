@@ -10,6 +10,9 @@ import { StatisticsChart } from '../components/statistics/StatisticsChart'
 import { FormOverlay } from '../components/form-overlay/form-overlay'
 import { OverlayList } from '../components/overlay-list/OverlayList'
 
+import { AiOutlineBarChart } from 'react-icons/ai'
+import { MdTableRows } from 'react-icons/md'
+
 import './avaliacaoPage.css'
 
 export default function AvaliacaoPage() {
@@ -59,15 +62,14 @@ export default function AvaliacaoPage() {
                         
                     </ContainerColumn>
                     <ContainerRow margin={'0 0 0 auto'} columnStart={1}  columnEnd={3} rowStart={2} rowEnd={3}>
-                        <Label htmlFor='RadioForm'>
-                            Input
-                            <Input id="RadioForm" type="radio" name="displayType" onClick={HandleViewingStats} value="1" defaultChecked/>
+                        <Label className='align label-highlight' htmlFor='RadioForm'>
+                            <MdTableRows size={32}></MdTableRows>
+                            <input id="RadioForm" type="radio" name="displayType" onClick={HandleViewingStats} value="1" defaultChecked/>
                         </Label>
-                        <Label htmlFor='RadioTableDisplay'>
-                            Table   
-                            <Input id="RadioTableDisplay" type="radio" name="displayType" onClick={HandleViewingStats} value="2"/>
+                        <Label className='align label-highlight' htmlFor='RadioTableDisplay'>
+                        <AiOutlineBarChart size={32}></AiOutlineBarChart>   
+                            <input id="RadioTableDisplay" type="radio" name="displayType" onClick={HandleViewingStats} value="2"/>
                         </Label>
-
                     </ContainerRow>
                 </FormHeader>
                 <AvaliacaoForm >
