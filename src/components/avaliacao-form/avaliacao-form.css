@@ -1,1 +1,91 @@
 
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 475px !important; 
+    overflow-x: hidden;
+
+}
+.container-inputs-horizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 24px;
+}
+.container-inputs-vertical  {
+
+}
+.move-right  {
+
+    margin: 0 0 0 auto !important;
+}
+
+.title-margin-left { 
+    margin-left: 10px;
+}
+
+.container-max-width {
+    width: 100%;
+}
+.space-between {
+    justify-content: space-between;
+}
+
+.update-aval { 
+    background-color: rgb(255, 219, 205) !important;
+}
+.update-aval:hover {
+    background-color: rgb(255, 203, 182) !important;
+
+}
+.update-aval:active {
+    background-color: rgb(255, 176, 145) !important;
+
+}
+.save-aval { 
+    background-color:   rgb(205, 221, 255) !important;
+}
+.save-aval:hover {
+    background-color:rgb(188, 209, 255) !important;
+
+}
+.save-aval:active {
+    background-color:rgb(149, 183, 255) !important;
+
+}
+.btn-wraper {
+    display: flex;
+    width: 100%;
+
+}
+.btn-wraper > * {
+
+    width: 120px;
+}
+.btn-wraper > :nth-child(1) {
+    margin-left: 10px;
+    margin-right: 24%;
+}
+
+@media (max-width: 472px) {
+    .btn-wraper {
+        display: flex;
+        flex-direction: column;
+        /* width: 100%; */
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .btn-wraper > :nth-child(1) {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .btn-wraper > * {
+        /* margin-left: 10px; */
+        margin-top: 24px;
+        padding: 16px !important;
+        margin-right: 0;
+    }
+    
+}

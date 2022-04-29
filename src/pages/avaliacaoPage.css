@@ -1,0 +1,17 @@
+.form-stats-container { 
+    
+    position: relative;
+    display: flex;
+    grid-template-columns: 1fr 2.5fr;
+    flex-direction: row;
+    background-color: white;
+    z-index: 4;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.form-container {
+    background-color: white;
+    min-width: 280px;
+}

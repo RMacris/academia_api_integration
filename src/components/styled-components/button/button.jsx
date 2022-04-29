@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const Button = styled.button`
@@ -11,6 +10,9 @@ export const Button = styled.button`
     align-items: center;
     background-color: rgba(200,200,200);
 
+    &:hover { 
+        background-color: rgba(230,230,230);  
+    }
     &:active { 
         background-color: rgba(240,240,240);  
     }

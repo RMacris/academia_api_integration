@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "h ttps://localhost:3000",
+  baseURL: "https://acadamy-resilia.herokuapp.com",
 });
 
 
@@ -11,3 +11,7 @@ const api = axios.create({
 
 
 export default api;
+//! used for authentication 
+// api.defaults.headers.authorization = `Bearer ${token}`;
+
+
