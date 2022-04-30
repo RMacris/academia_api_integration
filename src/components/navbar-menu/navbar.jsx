@@ -23,7 +23,7 @@ export function NavbarMenu()  {
                             { auth.auth && <Nav.Link eventKey={2} href="/avalicao">AVALIAÇÕES</Nav.Link> }
                             <Nav.Link eventKey={3} href="/contato">CONTATOS</Nav.Link>
                             <Nav.Link eventKey={4} href="/about">SOBRE</Nav.Link>
-                            {!(auth.auth) && <Nav.Link eventKey={5} href="/signup">LOGIN</Nav.Link>}
+                            {!(auth.auth) && <Nav.Link eventKey={5} href="/">LOGIN</Nav.Link>}
                             {(auth.auth) && <Nav.Link onClick={HandleLogout} eventKey={5} href="/">SAIR</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>

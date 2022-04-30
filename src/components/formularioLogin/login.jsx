@@ -29,6 +29,9 @@ export function Login() {
 			auth.setAuth(true,resultado.data.data[0])
 			navigate("/")
 		}
+		else {
+			console.log(resultado.data)
+		}
 	}
     return(
 		<div className={styles.principal}>
