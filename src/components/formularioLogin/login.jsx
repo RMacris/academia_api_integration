@@ -39,7 +39,7 @@ export function Login() {
 
 				<div className={styles.login}>
 
-					<h1>Fazer Login!</h1>
+					<h1>Login</h1>
 
 					<form className={styles.form} onSubmit={(event) => authenticate(event)}>
 							

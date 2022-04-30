@@ -21,9 +21,12 @@
     align-items: center;
     justify-content: center;
 }
-
-input[type="radio"]:checked  + .label-highlight{ 
-    background-color: aquamarine;
+.label-highlight:hover {
+    color: rgb(8, 8, 68) !important;
+    cursor: pointer !important;
+}
+input[type="radio"]:checked + .label-highlight{ 
+    background-color: aquamarine !important;
 }
 
 input[type="radio"] {

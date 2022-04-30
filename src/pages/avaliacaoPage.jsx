@@ -9,7 +9,6 @@ import { StatisticsComponent } from '../components/statistics/statistics-compone
 import { StatisticsChart } from '../components/statistics/StatisticsChart'
 import { FormOverlay } from '../components/form-overlay/form-overlay'
 import { OverlayList } from '../components/overlay-list/OverlayList'
-
 import { AiOutlineBarChart } from 'react-icons/ai'
 import { MdTableRows } from 'react-icons/md'
 
