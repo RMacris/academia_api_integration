@@ -45,13 +45,18 @@ export function LoginProvider({children})  {
             ClearLocalStorage()
         }
     }
+    
     function SetCurrentAval(aval = new AvaliacaoTemplate()){
         const newAval = new AvaliacaoTemplate(aval.element)
         setCurrAval(newAval)
     }
+    function ClearAuth() {
+        ClearLocalStorage()
+        SetAuthentication(false)
+    }
     return (
         <LoginContext.Provider value={{user: userData}}>
-            <AuthLoginContext.Provider value={{auth: authState, setAuth: SetAuthentication}}>
+            <AuthLoginContext.Provider value={{auth: authState, setAuth: SetAuthentication, clearAuth: ClearAuth}}>
                 <AvaliacaoContext.Provider value={{aval: aval, setCurrentAval: SetCurrentAval}} >
                     { children }
                 </AvaliacaoContext.Provider>

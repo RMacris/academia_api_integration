@@ -29,17 +29,20 @@ export function Login() {
 			auth.setAuth(true,resultado.data.data[0])
 			navigate("/")
 		}
+		else {
+			console.log(resultado.data)
+		}
 	}
     return(
 		<div className={styles.principal}>
 
 				<div className={styles.propaganda}>
-					<h2>Hello World!</h2>
+					<h2 className={styles.text}>Foco, "Força" e Fé</h2>
 				</div>
 
 				<div className={styles.login}>
 
-					<h1>Fazer Login!</h1>
+					<h1>Login</h1>
 
 					<form className={styles.form} onSubmit={(event) => authenticate(event)}>
 							
@@ -67,8 +70,8 @@ export function Login() {
 								required
 								/>							
 						<div className={styles.cadastro}>
-						<Link className={styles.tagA} to="/signup">Novo Cadastro...</Link>
-						<Link className={styles.tagA} to="">Recuperar Senha...</Link>
+						<Link className={styles.tagA} to="/signup">Cadastro...</Link>
+						<Link className={styles.tagA} to="">Recuperar Conta...</Link>
 						</div>
 							
 						</Label>

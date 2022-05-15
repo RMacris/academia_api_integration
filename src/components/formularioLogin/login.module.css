@@ -1,37 +1,47 @@
 .principal{
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(0, 0, 0); */
     display: flex;
-    justify-content:flex-end;
     align-items: center;
     height: 100vh;
     width: 100%;
 }
 .login{
-    background-color: rgba(116, 114, 114, 0.836);
-    width: 30%;
-    height: 100%;
+    background-color: white;
+    width: 20%;
+    height: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 4px;
     margin-left: 10%;
-    border-style: solid;
-    
+    margin-right: 10%;
+    margin-left: auto;
+    min-width: 280px;
+
 }
 
 .propaganda{
-    width: 60%;
+    position: absolute;
+    width: 100%;
     height: 100%;
-    background-image: url("https://img.freepik.com/fotos-gratis/seta-contra-pessoas-se-exercitando-photo_1134-19119.jpg?w=740");
-    border: 3px solid rgb(0, 0, 0);
+    background-image: url("https://wallpaperaccess.com/full/5274380.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: -2;
+}
 
+.text{
+    color: rgba(255, 255, 255, 0.966);
+    font-size: 80px;
 }
 
 .form{
+
     width: 100%;
     padding:24px;
 }
@@ -67,7 +77,13 @@
 }
 .tagA{
     text-decoration: none;
+    color:rgb(2, 91, 163)
 }
+
+.tagA:hover{
+    color: black;
+}
+
 .rodaPe{
     display: flex;
     justify-content: center;
@@ -81,11 +97,11 @@
 
 .imagem{
     border-style: solid;
-    border-color: rgb(0, 0, 0);
+    border-color: rgb(255, 254, 254);
     width: 80%;
 }
 .botao:hover {
-    color: rgb(52, 150, 231);
+    color: rgb(5, 5, 5);
 }
 .icones{
     width: 35px;

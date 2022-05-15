@@ -5,6 +5,7 @@
     width: 475px !important; 
     overflow-x: hidden;
 
+    padding-bottom: 48px;
 }
 .container-inputs-horizontal{
     width: 100%;

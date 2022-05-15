@@ -6,14 +6,13 @@ hr {
 	border: 0;
 	border-top: 1px solid #094CFA;
 }
-<!-- Load font awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   padding: 80px 60px;
-  background: grey;
+  background: rgb(30,30,30);
   position: relative;
   bottom: 0;
   width: 100%;
-  
+  display: flex;
+  flex-direction: row;
    
   @media (max-width: 1000px) {
     padding: 50px 20px;
@@ -24,9 +23,11 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 1000px;
+    align-items: center;
+    /* max-width: 1000px; */
     margin: 0 auto;
     /* background: gray; */
+    
 `
    
 export const Column = styled.div`
@@ -37,15 +38,18 @@ export const Column = styled.div`
 `;
    
 export const Row = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* grid-template-columns: repeat(auto-fill, 
                          minmax(150px, 1fr));
   grid-gap: 20px;
    
   @media (max-width: 700px) {
     grid-template-columns: repeat(auto-fill, 
                            minmax(100px, 1fr));
-  }
+  } */
 `;
    
 export const FooterLink = styled.a`

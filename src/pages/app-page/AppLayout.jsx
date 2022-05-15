@@ -10,7 +10,9 @@ import {
 import { Login } from '../../components/formularioLogin/login';
 import { Cadastro } from '../../components/formularioCadastro/cadastro';
 import { useAuthentication, useLoginData } from '../../Contexts/LoginContext';
+import { Contatos } from '../contato'
 
+import { Footer } from '../../components/footer/footer'
 export function AppLayout() {
   const auth = useAuthentication()
   return (
@@ -22,11 +24,15 @@ export function AppLayout() {
               ? <Route path="/" element={<AvaliacaoPage />} />
               :<Route path="/" element={<Login />} /> 
             }
-            
             { !(auth.auth) && <Route path="/signup" element={<Cadastro />} />}
+            <Route path='/contato' element ={<Contatos />} ></Route>
         </Routes>
     </Router>
+<<<<<<< HEAD
     <Footer ></Footer>
+=======
+    <Footer />
+>>>>>>> origin/master
     </>
   )
 }
