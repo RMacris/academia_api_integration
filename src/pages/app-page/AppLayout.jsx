@@ -1,5 +1,6 @@
 import React from 'react'
 import AvaliacaoPage from '../../pages/avaliacaoPage';
+import Footer from './components/Footer/Footer.jsx';
 import {NavbarMenu} from  '../../components/navbar-menu/navbar.jsx';
 import {
   BrowserRouter as Router,
@@ -27,7 +28,11 @@ export function AppLayout() {
             <Route path='/contato' element ={<Contatos />} ></Route>
         </Routes>
     </Router>
+<<<<<<< HEAD
+    <Footer ></Footer>
+=======
     <Footer />
+>>>>>>> origin/master
     </>
   )
 }
