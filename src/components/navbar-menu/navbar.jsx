@@ -1,34 +1,43 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import './navbar.css';
+import { Link } from 'react-router-dom';
 import { useAuthentication } from '../../Contexts/LoginContext';
-import { useNavigate } from 'react-router-dom';
+import { GrMenu } from 'react-icons/gr'
+import style from './navbar.module.css';
 
 export function NavbarMenu()  {
     const auth = useAuthentication()
-    // const navigate = useNavigate()
     function HandleLogout() { 
         auth.clearAuth()
-        // navigate('/')
     }
     return (
-        <Navbar bg="light" expand="lg">
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                <div className='nav-custom-container'>
-                    <Navbar.Brand href="/">Resilia-Academy</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link eventKey={1} href="/">HOME</Nav.Link>
-                            { auth.auth && <Nav.Link eventKey={2} href="/avalicao">AVALIAÇÕES</Nav.Link> }
-                            <Nav.Link eventKey={3} href="/contato">CONTATOS</Nav.Link>
-                            <Nav.Link eventKey={4} href="/about">SOBRE</Nav.Link>
-                            {!(auth.auth) && <Nav.Link eventKey={5} href="/">LOGIN</Nav.Link>}
-                            {(auth.auth) && <Nav.Link onClick={HandleLogout} eventKey={5} href="/">SAIR</Nav.Link>}
-                        </Nav>
-                    </Navbar.Collapse>
+        <div className={style.header}>
+            <h1 className={style.logo}>
+                Logo
+            </h1>
+            <div className={style.nav_container}>
+                <div className={style.navToggle}>
+                    <GrMenu className={style.navToggle_icon}></GrMenu>
                 </div>
-            </Navbar>
-        </Navbar>
+                <nav className={style.nav}>
+                    <ul className={style.list}>
+                        <li className={style.list_item}>
+                            <a className={[style.login_highlight, style.item_link ].join(' ')} href="/signin">
+                                Login
+                            </a>
+                        </li>
+                        <li className={style.list_item}>
+                            <a className={style.item_link} href="/home">
+                                Home
+                            </a>
+                        </li>
+                        <li className={style.list_item}>
+                            <a className={style.item_link} href="/signup">
+                                SignUp
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     );
 }

@@ -66,7 +66,7 @@ export default function AvaliacaoPage() {
                             <input id="RadioForm" type="radio" name="displayType" onClick={HandleViewingStats} value="1" defaultChecked/>
                         </Label>
                         <Label className='align label-highlight' htmlFor='RadioTableDisplay'>
-                        <AiOutlineBarChart size={32}></AiOutlineBarChart>   
+                            <AiOutlineBarChart size={32}></AiOutlineBarChart>   
                             <input id="RadioTableDisplay" type="radio" name="displayType" onClick={HandleViewingStats} value="2"/>
                         </Label>
                     </ContainerRow>

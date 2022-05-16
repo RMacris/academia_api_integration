@@ -1,0 +1,99 @@
+:root { 
+    --card-width: 21% ;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: var(--card-width);
+    min-width: 240px;
+    background-color: white;
+    /* padding: 24px; */
+    border-radius: 10px;
+    box-shadow: 0px 1px 8px 0 rgba(0, 0, 0, 0.384);
+    overflow: hidden;
+    transition: 0.1s ease-in-out;
+    margin-top: 10px;
+}
+.card:hover { 
+
+    scale: 2;
+}
+.img__container {
+    width: 100%;    
+    height: 20vw  ;
+    background-color: black;
+    display: flex;
+
+}
+.img { 
+    width: 100%;
+    object-fit: cover;
+}
+
+.benefits__container {
+    padding: 24px;
+
+}
+.product_alias {
+    font-size: 2rem;
+    text-align: center;
+}
+.price  {
+    font-size: 1.8rem;
+    text-align: center;
+    color: rgb(0, 184, 0) ;
+}
+.price_conditions { 
+    color: black;
+    font-size: 1rem;
+}
+.benefits__list  {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.benefits__item{ 
+    width: 100%;
+    text-align: center;
+}
+.additional__info {
+    font-size: 12px;
+    padding: 10px 24px;
+    text-align: center;
+}
+.action__container {
+    width: 100%;
+    padding: 12px;
+}
+
+.button__action  {
+    width: 100%;
+    border-radius: 4px !important;
+    background-color: rgb(255, 136, 57) !important;
+    color: white !important ;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.available {
+    color: rgb(29, 88, 29) !important;
+}
+.unavaible {
+    color: rgb(114, 0, 0) !important;
+}
+
+
+@media (min-width: 580px) and (max-width: 888px) {
+    
+}
+
+@media (max-width: 580px) {
+    .card  {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .img__container{
+        height: auto;
+    }
+}

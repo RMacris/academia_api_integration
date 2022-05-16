@@ -1,0 +1,80 @@
+:root { 
+    --ads-height: 100vh;
+}
+.home { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.hidden { 
+    opacity: 1;
+}
+.img__container {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+}
+.img__responsive {
+    width: 100%;
+    object-fit: contain;
+    
+}
+
+/* section 2  */
+.products__container {
+    display: flex;
+    padding: 24px 5%;
+    background-color: white;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: 1s ease-in-out;
+    
+}
+.products__aditionals{
+    text-align: center;
+    padding: 24px 10%;
+}
+.ads__container_left, .ads__container_right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    transition: 1s ease-in-out;
+
+}
+.ads__container_left {
+    width: 100%;
+    min-height: var(--ads-height);
+    background: linear-gradient(270deg, #000000 25.71%, #1E1E1E 100%), 
+    linear-gradient(270deg, #000000 25.71%, #303030 100%);
+    /* color: white; */
+    padding: 5% 5%;
+    
+}
+
+.ads__container_right {
+    width: 100%;
+    min-height: var(--ads-height);
+    background: linear-gradient(270deg, #1E1E1E 0%, #000000 85.28%), 
+    linear-gradient(90deg, #000000 24.41%, #474747 100%);
+    /* color: white; */
+    padding: 5% 5%;
+    box-sizing: border-box;
+    
+}
+
+.show  {
+    opacity: 1 !important;
+}
+
+@media (min-width: 580px) and (max-width: 888px) {
+    .products__container { 
+        justify-content: space-evenly;
+    }
+}
