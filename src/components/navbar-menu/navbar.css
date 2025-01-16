@@ -26,46 +26,103 @@ a.navbar-brand {
     padding: 15px auto !important;
 }
 
-.nav-custom-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: inherit;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    padding-top: 15px !important;
+
+/* CSS da PAGINA DE CONTATOS */
+
+.container {
+    padding-top: 25px !important;
     padding-bottom: 15px !important;
-    margin-right: 1rem !important;
-    margin-left: 1rem !important;
 }
 
-@media (min-width: 1400px) {
-    .nav-custom-container{ 
-        max-width: auto !important;
+.container-centro {
+    padding: 25px !important;
+}
+
+.alinha {
+    padding-top: 25px !important;
+    display: flex !important;
+    justify-content: space-evenly !important;
+}
+
+.card-img-top {
+    width: 75% !important;
+    height: auto !important;
+    border-radius: 50% !important;
+}
+
+div.card {
+    display: flex !important;
+    width: 100% !important;
+    border-radius: 0px !important;
+    border: none !important;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1) !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.card {
+    border-style: none !important;
+
+}
+
+.card-link {
+    text-decoration: none !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-right: 20px !important;
+    color: #6a6262 !important;
+}
+
+.card-link:hover {
+    text-emphasis: underline !important;
+    color: #075874 !important;
+    font-size: 21px !important;
+    transition: all .5s ease-in-out !important;
+
+    .nav-custom-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: inherit;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        margin-right: 1rem !important;
+        margin-left: 1rem !important;
     }
-    
-}
-@media (min-width: 1200px) {
-    .nav-custom-container{ 
-        max-width: auto !important;
+
+    @media (min-width: 1400px) {
+        .nav-custom-container {
+            max-width: auto !important;
+        }
+
     }
-    
-}
-@media (min-width: 960px) {
-    .nav-custom-container{ 
-        max-width: auto !important;
+
+    @media (min-width: 1200px) {
+        .nav-custom-container {
+            max-width: auto !important;
+        }
+
     }
-    
-}
-@media (min-width: 720px) {
-    .nav-custom-container{ 
-        max-width: auto !important;
+
+    @media (min-width: 960px) {
+        .nav-custom-container {
+            max-width: auto !important;
+        }
+
     }
-    
-}
-@media (min-width: 576px) {
-    .nav-custom-container{ 
-        max-width: auto !important;
-    }   
-    
-}
+
+    @media (min-width: 720px) {
+        .nav-custom-container {
+            max-width: auto !important;
+        }
+
+    }
+
+    @media (min-width: 576px) {
+        .nav-custom-container {
+            max-width: auto !important;
+        }
+
+    }
